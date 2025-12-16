@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SafeFlix - Done!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Done!</h1>
+        <p>Your video has been cleaned.</p>
+        <video controls style="width:100%; max-width:800px; border-radius:12px;">
+            <source src="{{ url_for('download', filename=filename) }}" type="video/mp4">
+        </video>
+        <br><br>
+        <a href="{{ url_for('download', filename=filename) }}" class="download-btn">
+            Download Cleaned Video
+        </a>
+        <br><br>
+        <a href="/">Clean Another Video</a>
+    </div>
+</body>
+
+</html>

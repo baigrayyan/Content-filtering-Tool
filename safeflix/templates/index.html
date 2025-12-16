@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeFlix - Clean Your Videos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>SafeFlix</h1>
+        <p>Remove nudity, sexual content & abusive language from videos</p>
+
+        <div class="upload-box" id="drop-zone">
+            <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+                <input type="file" name="video" id="video-input" accept="video/*" required>
+                <label for="video-input" class="file-label">
+                    <p>📹 Drag & drop a video or click to browse</p>
+                    <small>MP4, MOV, AVI</small>
+                </label>
+                <button type="submit" id="upload-btn" style="display:none;">Clean Video</button>
+            </form>
+        </div>
+
+        <div id="progress-container" style="display:none;">
+            <p>Processing your video...</p>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="error">{{ messages[0] }}</div>
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

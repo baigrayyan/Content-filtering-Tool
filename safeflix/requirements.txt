@@ -1,0 +1,8 @@
+Flask==2.3.3
+moviepy==1.0.3
+opencv-python==4.10.0.84
+Pillow==10.4.0
+numpy==2.1.1
+openai-whisper==20231117
+better-profanity==0.7.0
+waitress==3.0.0
